@@ -66,7 +66,7 @@ function addition(a,b)
 }
 console.log(math(5,5,addition));
 
-//CallbackFunction
+//CallbackFunction-1
 function User(name,callback) 
 {
   setTimeout(() => 
@@ -78,3 +78,35 @@ User("Rishi",function(greeting)
 {
   console.log(greeting); 
 });
+
+//CallbackFunction-2
+function funny(name,callback) 
+{
+  console.log("hiiiiii " +name);
+  callback();
+}
+function bye() 
+{
+  console.log("Goodbye!");
+}
+funny("Rishi",bye);
+
+//set interval
+var count=0;
+var fn=setInterval(()=>
+{
+    console.log("count: " +count);
+    count++;
+    if(count>4)
+    {
+        clearInterval(fn);
+        console.log("finished");
+    }
+},1000)
+
+//set Timeout
+function fetchData(a) 
+{ 
+    setTimeout(() => console.log(a),2000); 
+} 
+fetchData("msg");
